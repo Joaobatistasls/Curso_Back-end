@@ -74,4 +74,4 @@ cidades = []
 for dado_de_usuario in propaganda_online:
     if dado_de_usuario["tempo_gasto_site"] is not None and dado_de_usuario["tempo_gasto_site"] >= 7:
         cidades.append(dado_de_usuario["cidade"]) 
-print(cidades)
+print(f"As cidades são: {cidades}")
