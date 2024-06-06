@@ -51,7 +51,7 @@ for dado_de_usuario in propaganda_online:
 paises = []
 for dado_de_usuario in propaganda_online:
     if dado_de_usuario["idade"] >= 30:
-        paises.append(dado_de_usuario["idade"])
+        paises.append(dado_de_usuario["pais"])
 
 print(f"Os usuários com mais de 30 anos são: {paises}")
 print("---------------------------------------")
@@ -61,7 +61,7 @@ print("---------------------------------------")
 """
 leads = []
 for dado_de_usuario in propaganda_online:
-    if dado_de_usuario["renda_area"]:
+    if dado_de_usuario.get("clicou_no_ad") == True:
         leads.append(dado_de_usuario["renda_area"])
 print(f"As rendas são: {leads}")
 print("---------------------------------------")
@@ -72,6 +72,7 @@ segundos no site
 """
 cidades = []
 for dado_de_usuario in propaganda_online:
-    if dado_de_usuario["tempo_gasto_site"] is not None and dado_de_usuario["tempo_gasto_site"] >= 7:
-        cidades.append(dado_de_usuario["cidade"]) 
-print(f"As cidades são: {cidades}")
+    tempo_gasto_site = dado_de_usuario.get("tempo_gasto_site")
+    if tempo_gasto_site is not None and tempo_gasto_site >= 70:
+        cidades.append(dado_de_usuario["cidade"])
+print(f"Cidades do usuário com mais de 70 segundos no0 site: {cidades}")
